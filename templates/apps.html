@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>App catalog</title>
+		<link rel="shortcut icon" href="C:\codes\app-catalog\templates/img2.png" type="image/x-icon">
+		<style type="text/css">
+			* {
+  				margin: 0;
+  				padding: 0;
+			}
+			h1 {
+				font: normal 170% 'century gothic', arial;
+				margin: 0 0 0 0;
+				padding: 60px 30px 60px 0;
+				background-color: #1D1D1D;
+				text-align: center;
+				border: solid 1px #1D1D1D;
+				color: #ffffff;
+			}
+			.things {
+			    width: 100%;
+			    height: 46px;
+		  		background-color: #1D1D1D; 
+			}
+			ul.menu {
+		  		background-color: #1D1D1D; 
+			}
+
+			ul.menu li {
+			    float: left;
+				padding: 0 0 0 9px;
+				list-style: none;
+			}
+
+			ul.menu li a {
+				font: normal 100% 'trebuchet ms', sans-serif;
+			    display: block;
+			    height: 20px;
+			    padding: 13px 200px 10px 0;
+			    color: #fff;
+			    text-decoration: none;
+			}
+
+			ul.menu li.selected a {
+			    color: #aeb002;
+			}
+
+			ul.menu li a:hover {
+			    color: #e4ec04;
+			}
+			.personal {
+				font-size: 40px;
+				position: absolute;
+				left: 1300px;
+				top: 150px;
+				color: #fff;
+				letter-spacing: 0.5em;
+			}
+			.juststuff {
+				font-size: 50px;
+			}
+			.search {
+				float: right;
+				width: 222px;
+				height: 50px;
+				margin: 0 0 16px 0;
+				border: solid 1px #1D1D1D;
+				border-radius: 5px;
+				background-color: #1D1D1D;
+				position: absolute;
+				left: 1265px;
+				top: 66px;
+			}
+			.btn {
+				padding: 8px;
+				background-color: #fff;
+				cursor: pointer;
+			}
+			input[type="text"], input[type="password"], input[type="search"] {
+				color: #5D5D5D;
+				width: 60%;
+				padding: 8px;
+			}
+
+			input, textarea {
+				outline: none;
+				border: none;
+				border: solid 1px #F2F2F2;
+			}
+		</style>
+	</head>
+	<body link="#000" vlink="#cecece" alink="#ff0000">
+		<h1><a style="text-decoration:none" href="/">Apps Catalog</a></h1>
+		<div class="things">
+			<ul class="menu">
+				<li><a href="/">Home</a></li>	
+				<li><a href="/games">Games</a></li>
+				<li class="selected"><a href="/apps">Apps</a></li>
+				<li><a href="/sites">Sites</a></li>
+				<li><a href="/contacts">Contacts</a></li>
+			</ul>
+		</div>
+		<p class="personal"><a style="text-decoration:none; color:white" href="/peter">P</a> <a style="text-decoration:none; color:white" href="/bekhruz">B</a></p>
+		<p class="juststuff">Here will be apps.</p>
+		<div class="search">
+				<form method="post" action="#" id="search_form">
+					<input type="search" name="search_field" placeholder="your search"/>
+					<input type="submit" class="btn" value="go"/>
+			</form>
+		</div>
+	</body>
+</html>
