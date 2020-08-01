@@ -4,13 +4,86 @@
 		<title>App catalog</title>
 		<link rel="shortcut icon" href="C:\codes\app-catalog\templates/img2.png" type="image/x-icon">
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-	<meta name="viewport" content="initial-scale=1, width=device-width"/>
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<meta name="viewport" content="initial-scale=1, width=device-width"/>
 		<style type="text/css">
 			* {
   				margin: 0;
   				padding: 0;
   				font-family: "montserrat",sans-serif;
+			}
+			.middle4{
+			  position: absolute;
+			  top: 380px;
+			  left: 150px;
+			  transform: translate(-50%,-50%);
+			}
+			.card {
+			  cursor: pointer;
+			  width: 170px;
+			  height: 240px;
+			}
+			.front,.back{
+			  width: 100%;
+			  height: 100%;
+			  overflow: hidden;
+			  backface-visibility: hidden;
+			  position: absolute;
+			  transition: transform .6s linear;
+			}
+			.front img{
+			  height: 100%;
+			}
+			.front{
+			  transform: perspective(600px) rotateY(0deg);
+			}
+			.back{
+			  background: #f1f1f1;
+			  transform: perspective(600px) rotateY(180deg);
+			}
+			.back-content{
+			  	color: #2c3e50;
+				position: absolute;
+				top: 125px;
+				left: 87px;
+			  	width: 100%;
+			  	padding: 15px 0 3px 0;
+			  	text-align: center;
+			  	float: right;
+			}
+			.back-content2 {
+			  	color: #2c3e50;
+				position: absolute;
+				top: 125px;
+				left: 87px;
+			  	width: 100%;
+			  	padding: 15px 0 3px 0;
+			  	text-align: center;
+			  	float: right;
+			}
+			.sm{
+			  margin: 0 0 0 0;
+			}
+			.sm a{
+			  display: inline-flex;
+			  width: 40px;
+			  height: 40px;
+			  justify-content: center;
+			  align-items: center;
+			  color: #2c3e50;
+			  font-size: 18px;
+			  transition: 0.4s;
+			  border-radius: 50%
+			}
+			.sm a:hover{
+			  background: #2c3e50;
+			  color: white;
+			}
+			.card:hover > .front{
+			  transform: perspective(600px) rotateY(-180deg);
+			}
+			.card:hover > .back{
+			  transform: perspective(600px) rotateY(0deg);
 			}
 			.container{
 			  	background: url(bg.jpg) no-repeat center;
@@ -190,5 +263,19 @@
 		      	</div>
 		    </form>
 		 </div>
+		 <div class="card middle4">
+	      	<div class="front">
+	        	<img src="https://indesignsecrets.com/wp-content/uploads/2016/08/Maze_1.png" alt="nope">
+	      	</div>
+	      	<div class="back">
+	        	<div class="back-content2 middle4">
+	          		<h2>Maze</h2>
+	          		<span>That maze is as deep<br/>as thoughts of author.</span>
+	          	<div class="sm">
+	            <a href="https://drive.google.com/drive/folders/1XTvuTpjTNa-YuOsSuXYqFwF_3KkWn-t3" style="text-decoration: none;"><i class="fab"></i>link</a>
+	        </div>
+	        </div>
+	      </div>
+	    </div>
 	</body>
 </html>
