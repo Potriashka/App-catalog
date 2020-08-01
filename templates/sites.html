@@ -3,12 +3,64 @@
 	<head>
 		<title>App catalog</title>
 		<link rel="shortcut icon" href="C:\codes\app-catalog\templates/img2.png" type="image/x-icon">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<style type="text/css">
 			* {
   				margin: 0;
   				padding: 0;
+  				font-family: "montserrat",sans-serif;
 			}
-			h1 {
+			.container{
+			  	background: url(bg.jpg) no-repeat center;
+			  	background-size: cover;
+			  	padding: 100px 40px;
+			  	position: absolute;
+			  	left: 43%;
+				color: white;
+				top: 575px;
+				text-align: center;
+			}
+			.container p {
+				max-width: 600px;
+				margin: 40px auto;
+				font-size: 15px;
+				font-weight: 300;
+			}
+			.down {
+				position: absolute;
+				top: 750px;
+			}
+			.email-box{
+			  	height: 40px;
+			  	justify-content: center;
+			  	display: flex; /*its better to use inline-flex*/
+			}
+			.email-box i{
+			  	background: #2f3542;
+			  	width: 40px;
+			  	line-height: 40px;
+			}
+			.tbox,.btn3{
+			  	border: none;
+			  	outline: none;
+			}
+			.tbox{
+			  	width: 0px;
+			  	transition: 0.6s;
+			}
+			.email-box:hover > .tbox,.tbox:focus{
+			  	width: 260px;
+			  	padding: 0 10px;
+			}
+			.btn3{
+			  	background: #2f3542;
+			  	color: white;
+			  	padding: 0 10px;
+			  	text-transform: uppercase;
+			  	cursor: pointer;
+			}
+			.h1 {
 				font: normal 170% 'century gothic', arial;
 				margin: 0 0 0 0;
 				padding: 60px 30px 60px 0;
@@ -53,8 +105,14 @@
 				position: absolute;
 				left: 1300px;
 				top: 150px;
-				color: #fff;
+				color: white;
 				letter-spacing: 0.5em;
+			}
+			.p:hover {
+				color: yellow;
+			}
+			.b:hover {
+				color: yellow;
 			}
 			.juststuff {
 				font-size: 50px;
@@ -75,6 +133,11 @@
 				padding: 8px;
 				background-color: #fff;
 				cursor: pointer;
+				border-radius: 40%;
+				font: normal 100% 'century gothic', arial;
+			}
+			.btn:hover {
+				background-color: #C75D5D;
 			}
 			input[type="text"], input[type="password"], input[type="search"] {
 				color: #5D5D5D;
@@ -86,18 +149,26 @@
 				outline: none;
 				border: none;
 				border: solid 1px #F2F2F2;
+				border-radius: 8%;
+				font: normal 100% 'century gothic', arial;
+			}
+			.login {
+				position: absolute;
+				left: 1150px;
+				top: 66px;
+				font-size: 25px;
 			}
 		</style>
 	</head>
 	<body link="#000" vlink="#cecece" alink="#ff0000">
-		<h1><a style="text-decoration:none" href="/">Apps Catalog</a></h1>
+		<h1 class="h1"><a style="text-decoration:none" href="/">Apps Catalog</a></h1>
 		<div class="things">
 			<ul class="menu">
 				<li><a href="/">Home</a></li>	
 				<li><a href="/games">Games</a></li>
 				<li><a href="/apps">Apps</a></li>
 				<li class="selected"><a href="/sites">Sites</a></li>
-				<li><a href="/contacts">Contacts</a></li>
+				<li><a href="/about-us">About us</a></li>
 			</ul>
 		</div>
 		<p class="personal"><a style="text-decoration:none; color:white" href="/peter">P</a> <a style="text-decoration:none; color:white" href="/bekhruz">B</a></p>
@@ -105,8 +176,18 @@
 		<div class="search">
 				<form method="post" action="#" id="search_form">
 					<input type="search" name="search_field" placeholder="your search"/>
-					<input type="submit" class="btn" value="go"/>
+					<input type="submit" class="btn" value="GO"/>
 			</form>
 		</div>
+		<p class="login"><a style="text-decoration:none; color:white" href="/login">Sigh In</a></p>
+		<div class="container">
+		    <form action="">
+		        <div class="email-box">
+		        <i class="fas fa-envelope"></i>
+		        <input class="tbox" type="email" name="" value="" placeholder="Enter your email">
+		      	<button class="btn3" type="button" name="button">Subscribe</button>
+		      	</div>
+		    </form>
+		 </div>
 	</body>
 </html>
