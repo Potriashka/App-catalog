@@ -18,8 +18,8 @@ def apps():
 def sites():
     return render_template('sites.html')
 
-@app.route('/contacts')
-def contacts():
+@app.route('/about-us')
+def aboutus():
     return render_template('contacts.html')
 
 @app.route('/peter')
@@ -29,6 +29,10 @@ def peter():
 @app.route('/bekhruz')
 def bekhruz():
     return render_template('bekhruz.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.html')
 
 if __name__ == "__main__":
     app.run()
