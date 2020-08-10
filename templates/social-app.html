@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>App catalog</title>
+		<link rel="shortcut icon" href="C:\codes\app-catalog\templates/img2.png" type="image/x-icon">
+    	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    	<meta name="viewport" content="initial-scale=1, width=device-width"/>
+		<style type="text/css">
+			* {
+  				margin: 0;
+  				padding: 0;
+  				font-family: "montserrat",sans-serif;
+			}
+			.back4 {
+				color: #1D1D1D;
+				text-decoration: none;
+				position: absolute;
+				top: 605px;
+				left: 755px;
+				font-size: 25px;
+			}
+			.developer {
+				font-size: 25px;
+				position: absolute;
+				top: 550px;
+				left: 660px;
+			}
+			.link {
+				font-size: 25px;
+				position: absolute;
+				top: 515px;
+				left: 660px;
+			}
+			.link2 {
+				font-size: 25px;
+				position: absolute;
+				top: 515px;
+				left: 715px;
+			}
+			.link2:hover {
+				color: #5A71E6;
+			}
+			.projectdescription {
+				font: normal 100% 'century gothic', arial;
+				text-align: center;
+				position: absolute;
+				top: 327px;
+				left: 520px;
+				font-size: 25px;
+			}
+			.projectname {
+				font-size: 40px;
+				font: normal 'small capital', arial;
+				position: absolute;
+				top: 250px;
+				left: 657px;
+			}
+			img {
+				height: 230px;
+				width: 180px;
+				position: absolute;
+				top: 250px;
+				left: 300px;
+			}
+			.middle4{
+			  position: absolute;
+			  top: 380px;
+			  left: 150px;
+			  transform: translate(-50%,-50%);
+			}
+			.card {
+			  cursor: pointer;
+			  width: 170px;
+			  height: 240px;
+			}
+			.front,.back{
+			  width: 100%;
+			  height: 100%;
+			  overflow: hidden;
+			  backface-visibility: hidden;
+			  position: absolute;
+			  transition: transform .6s linear;
+			}
+			.front img{
+			  height: 100%;
+			}
+			.front{
+			  transform: perspective(600px) rotateY(0deg);
+			}
+			.back{
+			  background: #f1f1f1;
+			  transform: perspective(600px) rotateY(180deg);
+			}
+			.back-content{
+			  	color: #2c3e50;
+				position: absolute;
+				top: 125px;
+				left: 87px;
+			  	width: 100%;
+			  	padding: 15px 0 3px 0;
+			  	text-align: center;
+			  	float: right;
+			}
+			.back-content2 {
+			  	color: #2c3e50;
+				position: absolute;
+				top: 125px;
+				left: 87px;
+			  	width: 100%;
+			  	padding: 15px 0 3px 0;
+			  	text-align: center;
+			  	float: right;
+			}
+			.sm{
+			  margin: 0 0 0 0;
+			}
+			.sm a{
+			  display: inline-flex;
+			  width: 40px;
+			  height: 40px;
+			  justify-content: center;
+			  align-items: center;
+			  color: #2c3e50;
+			  font-size: 18px;
+			  transition: 0.4s;
+			  border-radius: 50%
+			}
+			.sm a:hover{
+			  background: #2c3e50;
+			  color: white;
+			}
+			.card:hover > .front{
+			  transform: perspective(600px) rotateY(-180deg);
+			}
+			.card:hover > .back{
+			  transform: perspective(600px) rotateY(0deg);
+			}
+			.container{
+			  	background: url(bg.jpg) no-repeat center;
+			  	background-size: cover;
+			  	padding: 100px 40px;
+			  	position: absolute;
+			  	left: 44%;
+				color: white;
+				top: 575px;
+				text-align: center;
+			}
+			.container p {
+				max-width: 600px;
+				margin: 40px auto;
+				font-size: 15px;
+				font-weight: 300;
+			}
+			.down {
+				position: absolute;
+				top: 750px;
+			}
+			.email-box{
+			  	height: 40px;
+			  	justify-content: center;
+			  	display: flex; /*its better to use inline-flex*/
+			}
+			.email-box i{
+			  	background: #2f3542;
+			  	width: 40px;
+			  	line-height: 40px;
+			}
+			.tbox,.btn3{
+			  	border: none;
+			  	outline: none;
+			}
+			.tbox{
+			  	width: 0px;
+			  	transition: 0.6s;
+			}
+			.email-box:hover > .tbox,.tbox:focus{
+			  	width: 260px;
+			  	padding: 0 10px;
+			}
+			.btn3{
+			  	background: #2f3542;
+			  	color: white;
+			  	padding: 0 10px;
+			  	text-transform: uppercase;
+			  	cursor: pointer;
+			}
+			.h1 {
+				font: normal 170% 'century gothic', arial;
+				margin: 0 0 0 0;
+				padding: 60px 30px 60px 0;
+				background-color: #1D1D1D;
+				text-align: center;
+				border: solid 1px #1D1D1D;
+				color: #ffffff;
+			}
+			.things {
+			    width: 100%;
+			    height: 46px;
+		  		background-color: #1D1D1D; 
+			}
+			ul.menu {
+		  		background-color: #1D1D1D; 
+			}
+
+			ul.menu li {
+			    float: left;
+				padding: 0 0 0 9px;
+				list-style: none;
+			}
+
+			ul.menu li a {
+				font: normal 100% 'trebuchet ms', sans-serif;
+			    display: block;
+			    height: 20px;
+			    padding: 13px 200px 10px 0;
+			    color: #fff;
+			    text-decoration: none;
+			}
+
+			ul.menu li.selected a {
+			    color: #aeb002;
+			}
+
+			ul.menu li a:hover {
+			    color: #e4ec04;
+			}
+			.personal {
+				font-size: 40px;
+				position: absolute;
+				left: 1300px;
+				top: 150px;
+				color: white;
+				letter-spacing: 0.5em;
+			}
+			.p:hover {
+				color: yellow;
+			}
+			.b:hover {
+				color: yellow;
+			}
+			.juststuff {
+				font-size: 50px;
+			}
+			.search {
+				float: right;
+				width: 222px;
+				height: 50px;
+				margin: 0 0 16px 0;
+				border: solid 1px #1D1D1D;
+				border-radius: 5px;
+				background-color: #1D1D1D;
+				position: absolute;
+				left: 1265px;
+				top: 66px;
+			}
+			.btn {
+				padding: 8px;
+				background-color: #fff;
+				cursor: pointer;
+				border-radius: 40%;
+				font: normal 100% 'century gothic', arial;
+			}
+			.btn:hover {
+				background-color: #C75D5D;
+			}
+			input[type="text"], input[type="password"], input[type="search"] {
+				color: #5D5D5D;
+				width: 60%;
+				padding: 8px;
+			}
+
+			input, textarea {
+				outline: none;
+				border: none;
+				border: solid 1px #F2F2F2;
+				border-radius: 8%;
+				font: normal 100% 'century gothic', arial;
+			}
+			.login {
+				position: absolute;
+				left: 1150px;
+				top: 66px;
+				font-size: 25px;
+			}
+		</style>
+	</head>
+	<body link="#000" vlink="#cecece" alink="#ff0000">
+		<h1 class="h1"><a style="text-decoration:none" href="/">Apps Catalog</a></h1>
+		<div class="things">
+			<ul class="menu">
+				<li><a href="/">Home</a></li>	
+				<li><a href="/games">Games</a></li>
+				<li><a href="/apps">Apps</a></li>
+				<li><a href="/sites">Sites</a></li>
+				<li><a href="/about-us">About us</a></li>
+			</ul>
+		</div>
+		<p class="personal"><a style="text-decoration:none; color:white" href="/peter">P</a> <a style="text-decoration:none; color:white" href="/bekhruz">B</a></p>
+		<div class="search">
+				<form method="post" action="#" id="search_form">
+					<input type="search" name="search_field" placeholder="your search"/>
+					<input type="submit" class="btn" value="GO"/>
+			</form>
+		</div>
+		<p class="login"><a style="text-decoration:none; color:white" href="/login">Sigh In</a></p>
+		<div class="container">
+		    <form action="">
+		        <div class="email-box">
+		        <i class="fas fa-envelope"></i>
+		        <input class="tbox" type="email" name="" value="" placeholder="Enter your email">
+		      	<button class="btn3" type="button" name="button">Subscribe</button>
+		      	</div>
+		    </form>
+		 </div>
+	    </div>
+	    <img src="https://social-sutra.com/wp-content/uploads/2019/08/14087.jpg" alt="none">
+	    <h1 class="projectname">Social Media App</h1>
+	    <p class="projectdescription">One day there was a little boy. Suddenly, he thought<br/>"why don't me make some social network?". And in<br/>that day social media app started to exist. There you can<br/>post posts, add friends, writ comments, create groups etc.<br/>So if you want to do all that, visit this website.</p>
+	    <p class="link">link: </p>
+	    <p class="link2"><a href="https://social-media-app-beta.herokuapp.com" style="color: #2DBAE6; text-decoration: none;">social media app</a></p>
+	    <p class="developer">Developers: Bekhruz Inc.</p>
+	    <p class="back4"><a style="text-decoration: none;color: #1D1D1D;" href="/">Back</a></p>
+	</body>
+</html>
