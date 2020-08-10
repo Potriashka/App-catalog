@@ -34,5 +34,9 @@ def bekhruz():
 def login():
     return render_template('login.html')
 
+@app.route('/social-app')
+def social_app():
+	return render_template('social-app.html')
+
 if __name__ == "__main__":
     app.run()
