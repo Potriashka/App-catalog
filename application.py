@@ -1,10 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, redirect, url_for, render_template, request
 
 app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return render_template('home.html')
 
 @app.route('/games')
 def games():
@@ -30,13 +26,25 @@ def peter():
 def bekhruz():
     return render_template('bekhruz.html')
 
-@app.route('/login')
-def login():
+@app.route('/login2')
+def login2():
     return render_template('login.html')
 
 @app.route('/social-app')
 def social_app():
 	return render_template('social-app.html')
 
+@app.route("/<usr>")
+def user(usr):
+    return f"<h1>{usr}</h1>"
+
+@app.route('/', methods=["POST", "GET"])
+def home():
+	if request.method == "POST":
+		user = request.form["search_field"]
+		return redirect(url_for("user", usr=user))
+	else:
+		return render_template('home.html')
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
