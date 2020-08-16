@@ -2,40 +2,20 @@
 <html lang="en">
 	<head>
 		<title>App catalog</title>
-		<link rel="shortcut icon" href="img2.png" type="image/x-icon">
-		<meta charset="utf-8">
-    	<link rel="stylesheet" href="style.css">
+		<link rel="shortcut icon" href="C:\codes\app-catalog\templates/img2.png" type="image/x-icon">
     	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    	<meta name="viewport" content="initial-scale=1, width=device-width"/>
+    	<meta name="viewport" content="initial-scale=1, width=device-width">
 		<style type="text/css">
 			* {
   				margin: 0;
   				padding: 0;
   				font-family: "montserrat",sans-serif;
 			}
-			.middle2 {
+			.middle2{
 			  position: absolute;
 			  top: 380px;
 			  left: 150px;
-			  transform: translate(-50%,-50%);
-			}
-			.middle3 {
-			  position: absolute;
-			  top: 380px;
-			  left: 340px;
-			  transform: translate(-50%,-50%);
-			}
-			.middle4 {
-			  position: absolute;
-			  top: 380px;
-			  left: 530px;
-			  transform: translate(-50%,-50%);
-			}
-			.middle5 {
-			  position: absolute;
-			  top: 380px;
-			  left: 720px;
 			  transform: translate(-50%,-50%);
 			}
 			.card {
@@ -62,16 +42,6 @@
 			  transform: perspective(600px) rotateY(180deg);
 			}
 			.back-content{
-			  	color: #2c3e50;
-				position: absolute;
-				top: 125px;
-				left: 87px;
-			  	width: 100%;
-			  	padding: 15px 0 3px 0;
-			  	text-align: center;
-			  	float: right;
-			}
-			.back-content2 {
 			  	color: #2c3e50;
 				position: absolute;
 				top: 125px;
@@ -210,8 +180,6 @@
 			}
 			.juststuff {
 				font-size: 50px;
-				position: absolute;
-				left: 15px;
 			}
 			.search {
 				float: right;
@@ -260,23 +228,23 @@
 		<h1 class="h1"><a style="text-decoration:none" href="/">Apps Catalog</a></h1>
 		<div class="things">
 			<ul class="menu">
-				<li class="selected"><a href="/">Home</a></li>	
+				<li><a href="/">Home</a></li>	
 				<li><a href="/games">Games</a></li>
-				<li><a href="/apps">Apps</a></li>
+				<li class="selected"><a href="/apps">Apps</a></li>
 				<li><a href="/sites">Sites</a></li>
 				<li><a href="/about-us">About us</a></li>
 			</ul>
 		</div>
-		<p class="personal"><a class="p" style="text-decoration:none; color:white" href="/peter">P</a> <a class="b" style="text-decoration:none; color:white" href="/bekhruz">B</a></p>
-		<p class="juststuff">What's new:</p>
+		<p class="personal"><a style="text-decoration:none; color:white" href="/peter">P</a> <a style="text-decoration:none; color:white" href="/bekhruz">B</a></p>
+		<p class="juststuff">Here is some apps.</p>
 		<div class="search">
-				<form method="POST" action="#" id="search_form">
-					<input type="search" name="search_field" placeholder="ex. social-app"/>
+				<form method="post" action="#" id="search_form">
+					<input type="search" name="search_field" placeholder="your search"/>
 					<input type="submit" class="btn" value="GO"/>
-				</form>
+			</form>
 		</div>
 		<p class="login"><a style="text-decoration:none; color:white" href="/login2">Sign In</a></p>
-		<div style="position: absolute;"class="container">
+		<div class="container">
 		    <form action="">
 		        <div class="email-box">
 		        <i class="fas fa-envelope"></i>
@@ -287,56 +255,14 @@
 		 </div>
 		 <div class="card middle2">
 	      	<div class="front">
-	        	<img src="https://social-sutra.com/wp-content/uploads/2019/08/14087.jpg" alt="nope">
-	      	</div>
-	      	<div class="back">
-	        	<div class="back-content middle2">
-	          		<h2><a style="text-decoration: none; color: #2c3e50;" href="/social-app">Social Media App</a></h2>
-	          		<span>A very popular Social<br/>network from Bekhruz Co.</span>
-	          	<div class="sm">
-	            <a href="https://social-media-app-beta.herokuapp.com/login" style="text-decoration: none;"><i class="fab"></i>link</a>
-	        </div>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="card middle3">
-	      	<div class="front">
 	        	<img src="https://hinews.pro/media/k2/items/cache/0561feaa86a9d43b7dc634e81b54e049_XL.jpg" alt="nope">
 	      	</div>
 	      	<div class="back">
-	        	<div class="back-content2 middle3">
+	        	<div class="back-content middle2">
 	          		<h2>Voice Assistant</h2>
 	          		<span>Super smart assistant<br/>that can speak 2 languages.</span>
 	          	<div class="sm">
-	            <a href="https://drive.google.com/file/d/1UUsBrVoFJjl4Dcx7L_i8xGti5qTYXnbP/view?usp=drivesdk" style="text-decoration: none;"><i class="fab"></i>link</a>
-	        </div>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="card middle4">
-	      	<div class="front">
-	        	<img src="https://indesignsecrets.com/wp-content/uploads/2016/08/Maze_1.png" alt="nope">
-	      	</div>
-	      	<div class="back">
-	        	<div class="back-content2 middle4">
-	          		<h2>Maze</h2>
-	          		<span>That maze is as deep<br/>as thoughts of author.</span>
-	          	<div class="sm">
-	            <a href="https://drive.google.com/drive/folders/1XTvuTpjTNa-YuOsSuXYqFwF_3KkWn-t3" style="text-decoration: none;"><i class="fab"></i>link</a>
-	        </div>
-	        </div>
-	      </div>
-	    </div>
-	    <div class="card middle5">
-	      	<div class="front">
-	        	<img src="https://vignette.wikia.nocookie.net/naruto/images/d/dd/Naruto_Uzumaki%21%21.png/revision/latest/top-crop/width/360/height/450?cb=20170816203155&path-prefix=ru" alt="nope">
-	      	</div>
-	      	<div class="back">
-	        	<div class="back-content middle5">
-	          		<h2>Naruto Wiki</h2>
-	          		<span>Here you can now some<br/>Information about Naruto.</span>
-	          	<div class="sm">
-	            <a href="http://petenarwiki.herokuapp.com/" style="text-decoration: none;"><i class="fab"></i>link</a>
+	            <a href="https://social-media-app-beta.herokuapp.com/login" style="text-decoration: none;"><i class="fab"></i>link</a>
 	        </div>
 	        </div>
 	      </div>
