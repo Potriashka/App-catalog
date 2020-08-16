@@ -1,6 +1,24 @@
 from flask import Flask, redirect, url_for, render_template, request
+from firebase import firebase
 
 app = Flask(__name__)
+
+firebase = firebase.FirebaseApplication("https://my-awesome-project-46dd8.firebaseio.com/", None)
+
+@app.route('/login2', methods=["POST", "GET"])
+def reallogin():
+	if request.method == "POST":
+		username = request.form["username"]
+		password = request.form["pass"]
+		data = {
+			'Username':username,
+			'Password':password
+			}
+		result = firebase.post('my-awesome-project-46dd8/Customer', data)
+		print(result)
+		return redirect(url_for("home"))
+	else:
+		return render_template('login.html')
 
 @app.route('/games')
 def games():
@@ -26,9 +44,9 @@ def peter():
 def bekhruz():
     return render_template('bekhruz.html')
 
-@app.route('/login2')
-def login2():
-    return render_template('login.html')
+@app.route('/user')
+def user123():
+	return f"{username}<br/>{password}"
 
 @app.route('/social-app')
 def social_app():
