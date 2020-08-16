@@ -7,18 +7,7 @@ firebase = firebase.FirebaseApplication("https://my-awesome-project-46dd8.fireba
 
 @app.route('/login2', methods=["POST", "GET"])
 def reallogin():
-	if request.method == "POST":
-		username = request.form["username"]
-		password = request.form["pass"]
-		data = {
-			'Username':username,
-			'Password':password
-			}
-		result = firebase.post('my-awesome-project-46dd8/Customer', data)
-		print(result)
-		return redirect(url_for("home"))
-	else:
-		return render_template('login.html')
+	return render_template('login.html')
 
 @app.route('/games')
 def games():
