@@ -1,6 +1,5 @@
 from flask import Flask, redirect, url_for, render_template, request
-import firebase
-import python-firebase
+from firebase import firebase
 
 app = Flask(__name__)
 
