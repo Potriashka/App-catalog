@@ -6,7 +6,7 @@ app.secret_key = 'secret_key'
 
 firebase = firebase.FirebaseApplication("https://my-awesome-project-46dd8.firebaseio.com/", None)
 
-@app.route('/login2', methods=["POST", "GET"])
+@app.route('/login', methods=["POST", "GET"])
 def reallogin():
 	if request.method == "POST":
 		username = request.form["username"]
